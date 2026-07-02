@@ -458,7 +458,7 @@ export const getProjects = (lang: Language): Project[] => [
     title: lang === "fr" ? "Tableau de Bord de Sécurité Krypton" : "Krypton Cyber Security Dashboard",
     client: "Krypton Inc",
     category: "SaaS",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
     description: lang === "fr"
       ? "Un moteur de tableau de bord hautement personnalisé en mode sombre affichant en temps réel les niveaux de menace et les tunnels de base de données actifs. Utilise des conteneurs SVG D3.js, des hooks personnalisés et des machines d'état robustes pour un rendu ultra-fluide des graphiques de suivi haute densité."
       : "A highly customized dark-mode dashboard engine displaying threat levels and active database tunnels in real-time. Employs D3.js SVG containers, custom hooks, and robust state machines to render high-density tracking graphs smoothly without any interface lag.",
