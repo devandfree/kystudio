@@ -309,40 +309,13 @@ export const translations = {
 
 export const getTeam = (lang: Language): TeamMember[] => [
   {
-    id: "sarah",
-    name: "Sarah Jenkins",
-    role: lang === "fr" ? "Directrice Artistique & Fondatrice" : "Creative Director & Founder",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    id: "steve",
+    name: "Steve Emane",
+    role: "Business Analyst & Product Builder",
+    image: "https://www.hebergeur-image.com/upload/143.105.152.107-6a467dbb33f67.jpg",
     colorClass: "bg-red-900/40 mix-blend-multiply",
     gradientClass: "from-red-950/90 via-red-900/20 to-transparent",
     delay: 0.1,
-  },
-  {
-    id: "david",
-    name: "David Kross",
-    role: lang === "fr" ? "Architecte Digital Principal" : "Lead Digital Architect",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-    colorClass: "bg-orange-800/40 mix-blend-multiply",
-    gradientClass: "from-orange-950/90 via-orange-900/20 to-transparent",
-    delay: 0.2,
-  },
-  {
-    id: "liam",
-    name: "Liam Vance",
-    role: lang === "fr" ? "Développeur Full-Stack Principal" : "Lead Full-Stack Developer",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80",
-    colorClass: "bg-indigo-900/40 mix-blend-multiply",
-    gradientClass: "from-indigo-950/90 via-indigo-900/20 to-transparent",
-    delay: 0.3,
-  },
-  {
-    id: "amara",
-    name: "Amara Patel",
-    role: lang === "fr" ? "SEO & Stratégie de Croissance" : "SEO & Growth Strategy",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
-    colorClass: "bg-amber-900/40 mix-blend-multiply",
-    gradientClass: "from-amber-950/90 via-amber-900/20 to-transparent",
-    delay: 0.4,
   },
 ];
 
