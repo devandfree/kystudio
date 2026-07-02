@@ -21,7 +21,7 @@ export default function App() {
   const [language, setLanguage] = useState<Language>(() => {
     const saved = localStorage.getItem("kyros-lang");
     if (saved === "en" || saved === "fr") return saved;
-    return navigator.language.startsWith("fr") ? "fr" : "en";
+    return "en";
   });
 
   // Track scroll depth to update active header navigation dynamically
