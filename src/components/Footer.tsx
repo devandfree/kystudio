@@ -162,7 +162,6 @@ export default function Footer({ theme, language, onNavigate }: FooterProps) {
         }`}>
           <div className="flex flex-col sm:flex-row gap-1 sm:gap-6 text-center sm:text-left">
             <span>© {currentYear} Kyros Studio. {language === "fr" ? "Tous droits réservés." : "All rights reserved."}</span>
-            <span>SIRET: 894 102 405 00012 // Code APE: 6201Z</span>
           </div>
 
           <div className="flex gap-6">

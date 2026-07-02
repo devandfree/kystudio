@@ -148,7 +148,7 @@ export default function Contact({ theme, language }: ContactProps) {
                   <span className={`text-sm font-bold transition-colors ${
                     theme === "light" ? "text-neutral-900" : "text-white"
                   }`}>
-                    {language === "fr" ? "Paris — Londres (Télétravail possible)" : "Paris — London (Remote Friendly)"}
+                    {language === "fr" ? "Douala — Cameroun (Télétravail possible)" : "Douala — Cameroon (Remote Friendly)"}
                   </span>
                 </div>
               </div>
