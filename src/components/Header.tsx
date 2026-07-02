@@ -172,8 +172,8 @@ export default function Header({
             >
               <div className="w-5 h-5 rounded-full overflow-hidden border border-black/10 bg-neutral-100 flex items-center justify-center">
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=40&h=40&q=80"
-                  alt="Consultant Avatar"
+                  src="https://www.hebergeur-image.com/upload/143.105.152.107-6a467dbb33f67.jpg"
+                  alt="Steve Emane Avatar"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
