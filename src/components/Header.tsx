@@ -93,7 +93,6 @@ export default function Header({
               <span className={`text-[9px] font-mono border px-1 rounded ml-1.5 py-0.2 tracking-widest transition-colors duration-300 ${
                 theme === "light" ? "border-neutral-200 text-neutral-500" : "border-white/20 text-neutral-400"
               }`}>
-                ®
               </span>
             </span>
           </button>

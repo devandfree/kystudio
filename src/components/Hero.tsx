@@ -42,7 +42,7 @@ export default function Hero({ onNavigate, theme, language }: HeroProps) {
       {/* Cinematic Studio Background Image with rich gradients */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_background_1782997231058.jpg"
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80"
           alt="Kyros Studio Workspace"
           className={`w-full h-full object-cover filter scale-105 pointer-events-none transition-all duration-300 ${
             theme === "light" ? "opacity-[0.12] grayscale" : "opacity-35"
