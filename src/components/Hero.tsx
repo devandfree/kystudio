@@ -21,16 +21,16 @@ export default function Hero({ onNavigate, theme, language }: HeroProps) {
         delayChildren: 0.1,
       },
     },
-  };
+  } as const;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 20 },
+      transition: { type: "spring" as const, stiffness: 100, damping: 20 },
     },
-  };
+  } as const;
 
   return (
     <section
