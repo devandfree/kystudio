@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { Sparkles } from "lucide-react";
 import { Language } from "../lib/translations";
 
 interface ClientStripProps {
@@ -31,10 +30,9 @@ export default function ClientStrip({ theme, language }: ClientStripProps) {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-6 justify-between">
         
         {/* Left descriptor */}
-        <div className={`flex items-center gap-2.5 shrink-0 transition-colors duration-300 ${
+        <div className={`flex items-center shrink-0 transition-colors duration-300 ${
           theme === "light" ? "text-neutral-800" : "text-white"
         }`}>
-          <Sparkles className="w-5 h-5 text-red-600 animate-spin" style={{ animationDuration: "6s" }} />
           <span className={`font-mono text-[10px] md:text-xs font-bold uppercase tracking-wider transition-colors duration-300 ${
             theme === "light" ? "text-neutral-600" : "text-neutral-400"
           }`}>
