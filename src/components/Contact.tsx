@@ -11,12 +11,12 @@ interface ContactProps {
 export default function Contact({ theme, language }: ContactProps) {
   const t = translations[language].contact;
   
-  const [formData, setFormData] = useState({ name: "", email: "", budget: "$5k - $10k", details: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", budget: "100 000 - 300 000 FCFA", details: "" });
   const [formErrors, setFormErrors] = useState({ name: "", email: "" });
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const budgets = ["< $5k", "$5k - $10k", "$10k - $25k", "$25k+"];
+  const budgets = ["< 100 000 FCFA", "100 000 - 300 000 FCFA", "300 000 - 1 000 000 FCFA", "1 000 000 FCFA +"];
 
   const handleBudgetSelect = (b: string) => {
     setFormData({ ...formData, budget: b });
@@ -388,7 +388,7 @@ export default function Contact({ theme, language }: ContactProps) {
                   <button
                     onClick={() => {
                       setIsSubmitted(false);
-                      setFormData({ name: "", email: "", budget: "$5k - $10k", details: "" });
+                      setFormData({ name: "", email: "", budget: "100 000 - 300 000 FCFA", details: "" });
                     }}
                     className={`flex items-center gap-2 border text-xs font-bold px-6 py-3 rounded-xl cursor-pointer transition-all uppercase tracking-wider ${
                       theme === "light"

@@ -487,7 +487,7 @@ export default function Estimator({ theme, language }: EstimatorProps) {
                         theme === "light" ? "border-neutral-200/60" : "border-white/5"
                       }`}>
                         <span className={theme === "light" ? "text-neutral-500" : "text-neutral-400"}>{t.summaryPrice}</span>
-                        <span className={`font-bold font-mono ${theme === "light" ? "text-red-600" : "text-red-500"}`}>${totalPrice.toLocaleString()} USD</span>
+                        <span className={`font-bold font-mono ${theme === "light" ? "text-red-600" : "text-red-500"}`}>{totalPrice.toLocaleString()} FCFA</span>
                       </div>
                       <div className="flex justify-between pt-1">
                         <span className={theme === "light" ? "text-neutral-500" : "text-neutral-400"}>{t.summaryTimeline}</span>
@@ -548,10 +548,10 @@ export default function Estimator({ theme, language }: EstimatorProps) {
                 <div className={`font-mono font-extrabold text-3xl md:text-4xl tracking-tight transition-colors ${
                   theme === "light" ? "text-neutral-950" : "text-white"
                 }`}>
-                  ${totalPrice.toLocaleString()}
+                  {totalPrice.toLocaleString()}
                   <span className={`text-xs font-sans font-normal ml-1 transition-colors ${
                     theme === "light" ? "text-neutral-500" : "text-neutral-400"
-                  }`}>USD</span>
+                  }`}>FCFA</span>
                 </div>
                 <span className={`text-[10px] block mt-1 transition-colors ${
                   theme === "light" ? "text-neutral-400" : "text-neutral-500"
@@ -579,7 +579,7 @@ export default function Estimator({ theme, language }: EstimatorProps) {
                     <span className={`font-mono font-semibold transition-colors ${
                       theme === "light" ? "text-neutral-500" : "text-neutral-400"
                     }`}>
-                      ${steps[0].options.find((o) => o.id === selectedType)?.priceWeight.toLocaleString()}
+                      {steps[0].options.find((o) => o.id === selectedType)?.priceWeight.toLocaleString()} FCFA
                     </span>
                   </div>
                 </div>
@@ -598,7 +598,7 @@ export default function Estimator({ theme, language }: EstimatorProps) {
                     <span className={`font-mono font-semibold transition-colors ${
                       theme === "light" ? "text-neutral-500" : "text-neutral-400"
                     }`}>
-                      +${steps[1].options.find((o) => o.id === selectedScope)?.priceWeight.toLocaleString()}
+                      +{steps[1].options.find((o) => o.id === selectedScope)?.priceWeight.toLocaleString()} FCFA
                     </span>
                   </div>
                 </div>
@@ -625,7 +625,7 @@ export default function Estimator({ theme, language }: EstimatorProps) {
                             }`}>✓ {option?.label}</span>
                             <span className={`font-mono transition-colors ${
                               theme === "light" ? "text-neutral-500" : "text-neutral-400"
-                            }`}>+${option?.priceWeight.toLocaleString()}</span>
+                            }`}>+{option?.priceWeight.toLocaleString()} FCFA</span>
                           </div>
                         );
                       })}

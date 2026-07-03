@@ -96,11 +96,11 @@ export const translations = {
       summaryBadge: "// SUMMARY RECIPIENT OUTLINE",
       summaryEngine: "Project Engine:",
       summaryTotal: "Total Selections:",
-      summaryPrice: "Estimated Target Price:",
+      summaryPrice: "Estimated Budget (FCFA):",
       summaryTimeline: "Target Timeline:",
       estimateAnother: "Estimate Another Project",
       runningProposal: "// Running Proposal Outline",
-      estBudget: "Estimated Budget Estimate",
+      estBudget: "Estimated Budget (FCFA)",
       factorLabel: "Timeline Factor:",
       deliveryTitle: "Est. Target Delivery",
       digitalForm: "Digital Form:",
@@ -247,11 +247,11 @@ export const translations = {
       summaryBadge: "// RÉCAPITULATIF DE LA PROPOSITION",
       summaryEngine: "Type de Projet :",
       summaryTotal: "Options sélectionnées :",
-      summaryPrice: "Budget Estimé :",
+      summaryPrice: "Budget Estimé (FCFA) :",
       summaryTimeline: "Délai de Livraison :",
       estimateAnother: "Estimer un autre projet",
       runningProposal: "// Détails de la Proposition en Cours",
-      estBudget: "Budget Global Estimé",
+      estBudget: "Budget Global Estimé (FCFA)",
       factorLabel: "Coefficient de délai :",
       deliveryTitle: "Délai Estimé de Livraison",
       digitalForm: "Format Digital :",
@@ -510,7 +510,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr" 
           ? "Site au design personnalisé haut de gamme avec des interactions dynamiques et une rédaction à fort impact."
           : "Bespoke high-contrast design site with custom interactions, layout pairing & high-readability copywriting.", 
-        priceWeight: 3500 
+        priceWeight: 150000 
       },
       { 
         id: "ecommerce", 
@@ -518,7 +518,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Boutique Headless sur mesure, paniers latéraux ultra-rapides et connexions sécurisées Stripe & Shopify."
           : "Seamless, custom headless shop, high-speed cart sliders, and fully secure Stripe & Shopify connections.", 
-        priceWeight: 6500 
+        priceWeight: 350000 
       },
       { 
         id: "saas", 
@@ -526,7 +526,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Tableau de bord personnalisé, graphiques de données en temps réel, bases de données et tunnels d'API sécurisés."
           : "Bespoke user control dashboards, dynamic real-time tables, data visuals, database hooks & server API tunnels.", 
-        priceWeight: 9500 
+        priceWeight: 600000 
       },
       { 
         id: "mvp", 
@@ -534,7 +534,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Présentation optimisée pour valider rapidement votre concept avec d'excellents Core Web Vitals."
           : "Fast-tracked single-page presentation with optimized Core Web Vitals to validate high-growth concepts.", 
-        priceWeight: 2500 
+        priceWeight: 100000 
       },
     ],
   },
@@ -558,7 +558,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Contenu riche. Liste d'articles de blog personnalisée, fiches produits complexes et présentation de services."
           : "Rich details. Custom blog lists, modular product pages, multiple service deep-dives.", 
-        priceWeight: 1500 
+        priceWeight: 50000 
       },
       { 
         id: "large", 
@@ -566,7 +566,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Structures d'entreprise complètes, tableaux de bord multi-niveaux et espaces utilisateurs dynamiques."
           : "Comprehensive corporate structures, multi-layered dashboards, dynamic user portals.", 
-        priceWeight: 3500 
+        priceWeight: 150000 
       },
       { 
         id: "enterprise", 
@@ -574,7 +574,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Sites mondiaux traduits, navigation complexe, bases de données d'entreprise et haute sécurité."
           : "Global localized sites, complex multi-branch navigation rails, enterprise databases.", 
-        priceWeight: 7500 
+        priceWeight: 350000 
       },
     ],
   },
@@ -590,7 +590,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Balisages de schémas JSON-LD, sémantique HTML et indexation automatique."
           : "JSON-LD schema blueprints, semantic HTML, Google Index prep.", 
-        priceWeight: 800 
+        priceWeight: 30000 
       },
       { 
         id: "animations", 
@@ -598,7 +598,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Animations de physique Framer Motion, effets de survol magnétiques, écran de chargement sur mesure."
           : "Framer Motion physics, stagger entries, magnetic mouse states, custom loader.", 
-        priceWeight: 1200 
+        priceWeight: 40000 
       },
       { 
         id: "copywriting", 
@@ -606,7 +606,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Création de slogans marquants, fiches et argumentaires bilingues à forte conversion."
           : "High-impact headers, professional French & English brand copy that sells.", 
-        priceWeight: 1500 
+        priceWeight: 50000 
       },
       { 
         id: "auth", 
@@ -614,7 +614,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Authentification OAuth sécurisée, sessions de tableau de bord et profils utilisateurs."
           : "Secure OAuth systems, dashboard sessions, user profile database.", 
-        priceWeight: 2000 
+        priceWeight: 80000 
       },
       { 
         id: "stripe", 
@@ -622,7 +622,7 @@ export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
         description: lang === "fr"
           ? "Tunnels de commande express en un clic, abonnements récurrents et retours de transaction sécurisés."
           : "One-click express checkouts, recurring subscriptions, secure transaction callbacks.", 
-        priceWeight: 1000 
+        priceWeight: 60000 
       },
     ],
   },
