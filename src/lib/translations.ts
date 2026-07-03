@@ -467,34 +467,6 @@ export const getProjects = (lang: Language): Project[] => [
     link: "https://krypton-saas-dashboard.com",
     featured: true,
   },
-  {
-    id: "aether",
-    title: lang === "fr" ? "Portfolio Minimaliste d'Architecte Aether" : "Aether Minimalist Architect Portfolio",
-    client: "Aether Architectes",
-    category: "Brand Site",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-    description: lang === "fr"
-      ? "Une page de présentation élégante et épurée mettant en valeur des projets architecturaux de luxe. Accent mis sur les espaces vides, l'association de polices de caractères haut de gamme et une mise en page fluide utilisant des animations à ressort physique."
-      : "An elegant, grid-honoring presentation landing page showcasing luxury structures. Emphasizes negative space, custom fonts, typography pairings, and a fluid layout utilizing Spring physics animations.",
-    year: "2026",
-    tags: ["Typography Pairing", "Fluid Layouts", "Framer Motion", "Vitals Opt"],
-    link: "https://aether-architects-showcase.com",
-    featured: false,
-  },
-  {
-    id: "nexus",
-    title: lang === "fr" ? "Suivi de Chaîne Logistique Globale Nexus" : "Nexus Global Supply-Chain Tracker",
-    client: "Nexus Global Logistics",
-    category: "Web App",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-    description: lang === "fr"
-      ? "Un panneau de contrôle logistique sur mesure comprenant le suivi d'itinéraires de flotte interactifs, des modules de gestion des expéditions et des systèmes d'alerte automatisés basés sur des API météo."
-      : "A custom logistic control panel featuring interactive fleet routing, dispatch management modules, and automated alert systems based on weather APIs. Built to secure sub-100ms updates.",
-    year: "2025",
-    tags: ["Full-Stack App", "React Server Actions", "Node.js API", "Custom Canvas"],
-    link: "https://nexus-fleet-logistics.com",
-    featured: false,
-  },
 ];
 
 export const getEstimatorSteps = (lang: Language): EstimatorStep[] => [
