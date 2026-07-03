@@ -103,16 +103,32 @@ export default function Portfolio({ theme, language }: PortfolioProps) {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover filter transition-all duration-750 group-hover:scale-105 group-hover:filter"
+                    className="w-full h-full object-cover filter transition-all duration-700 ease-out group-hover:scale-108"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Subtle red indicator on hover */}
-                  <div className="absolute inset-0 bg-red-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Category Pill Overlaid */}
-                  <span className="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-[9px] font-mono tracking-wider font-extrabold uppercase text-white px-3 py-1 rounded-full border border-white/10">
+                  <span className="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-[9px] font-mono tracking-wider font-extrabold uppercase text-white px-3 py-1 rounded-full border border-white/10 transition-all duration-350 group-hover:opacity-0 group-hover:scale-95">
                     {project.category}
                   </span>
+
+                  {/* Smooth Hover Overlay */}
+                  <div className="absolute inset-0 bg-neutral-950/80 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out backdrop-blur-[3px] flex flex-col justify-end p-6 md:p-8">
+                    <span className="text-[10px] font-mono tracking-widest text-red-500 uppercase font-extrabold mb-1.5 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-[50ms]">
+                      // {project.category}
+                    </span>
+                    <h4 className="text-white font-sans font-extrabold text-base sm:text-lg md:text-xl tracking-tight leading-snug translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-[100ms]">
+                      {project.title}
+                    </h4>
+                    <div className="flex items-center justify-between mt-3.5 pt-3.5 border-t border-white/10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-[150ms]">
+                      <span className="text-neutral-400 font-mono text-[10px] uppercase font-bold tracking-wider">
+                        {project.client}
+                      </span>
+                      <span className="text-neutral-400 font-mono text-[10px] font-bold">
+                        {project.year}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Text Metadata Panel */}
