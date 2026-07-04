@@ -131,12 +131,12 @@ export default function Contact({ theme, language }: ContactProps) {
                 <div className="flex flex-col">
                   <span className="font-mono text-[9px] text-neutral-500 uppercase font-bold">// {language === "fr" ? "Email direct" : "Email Direct"}</span>
                   <a
-                    href="mailto:hello@kyros-studio.com"
+                    href="mailto:hello@kystudio.dev"
                     className={`text-sm font-bold transition-colors ${
                       theme === "light" ? "text-neutral-900 hover:text-red-600" : "text-white hover:text-red-500"
                     }`}
                   >
-                    hello@kyros-studio.com
+                    hello@kystudio.dev
                   </a>
                 </div>
               </div>

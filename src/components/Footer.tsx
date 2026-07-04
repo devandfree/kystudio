@@ -250,11 +250,11 @@ export default function Footer({ theme, language, onNavigate }: FooterProps) {
                       <p>
                         {language === "fr" ? (
                           <>
-                            Ce site est édité par <strong>Kyros Studio</strong>, représenté par Steve Emane en sa qualité de Directeur de la publication et Product Builder principal. Pour toute question, demande de collaboration ou signalement, veuillez nous écrire directement à : <a href="mailto:steve.emane97@gmail.com" className="text-red-500 hover:underline">steve.emane97@gmail.com</a>.
+                            Ce site est édité par <strong>Kyros Studio</strong>, représenté par Steve Emane en sa qualité de Directeur de la publication et Product Builder principal. Pour toute question, demande de collaboration ou signalement, veuillez nous écrire directement à : <a href="mailto:hello@kystudio.dev" className="text-red-500 hover:underline">hello@kystudio.dev</a>.
                           </>
                         ) : (
                           <>
-                            This website is published by <strong>Kyros Studio</strong>, represented by Steve Emane as Lead Product Builder and Publishing Director. For any enquiries or administrative notices, please contact us directly at: <a href="mailto:steve.emane97@gmail.com" className="text-red-500 hover:underline">steve.emane97@gmail.com</a>.
+                            This website is published by <strong>Kyros Studio</strong>, represented by Steve Emane as Lead Product Builder and Publishing Director. For any enquiries or administrative notices, please contact us directly at: <a href="mailto:hello@kystudio.dev" className="text-red-500 hover:underline">hello@kystudio.dev</a>.
                           </>
                         )}
                       </p>
@@ -401,11 +401,11 @@ export default function Footer({ theme, language, onNavigate }: FooterProps) {
                       <p>
                         {language === "fr" ? (
                           <>
-                            Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez à tout moment d'un droit d'accès, de rectification, de portabilité et de suppression totale de vos données de notre système. Pour l'exercer, contactez-nous par e-mail à : <a href="mailto:steve.emane97@gmail.com" className="text-red-500 hover:underline">steve.emane97@gmail.com</a>.
+                            Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez à tout moment d'un droit d'accès, de rectification, de portabilité et de suppression totale de vos données de notre système. Pour l'exercer, contactez-nous par e-mail à : <a href="mailto:hello@kystudio.dev" className="text-red-500 hover:underline">hello@kystudio.dev</a>.
                           </>
                         ) : (
                           <>
-                            In strict compliance with the General Data Protection Regulation (GDPR), you retain absolute rights to review, retrieve, correct, or permanently erase your business records from our systems at any time. To trigger these rights, email us directly at: <a href="mailto:steve.emane97@gmail.com" className="text-red-500 hover:underline">steve.emane97@gmail.com</a>.
+                            In strict compliance with the General Data Protection Regulation (GDPR), you retain absolute rights to review, retrieve, correct, or permanently erase your business records from our systems at any time. To trigger these rights, email us directly at: <a href="mailto:hello@kystudio.dev" className="text-red-500 hover:underline">hello@kystudio.dev</a>.
                           </>
                         )}
                       </p>
