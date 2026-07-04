@@ -175,10 +175,10 @@ export default function Contact({ theme, language }: ContactProps) {
           </div>
 
           {/* RIGHT COLUMN: Contact Form / Submission State */}
-          <div className={`lg:col-span-7 border rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative transition-all duration-300 ${
+          <div className={`lg:col-span-7 border rounded-[2.5rem] p-8 md:p-12 shadow-md relative transition-all duration-300 ${
             theme === "light"
-              ? "bg-[#fcfcfc] border-neutral-200 shadow-neutral-900/5"
-              : "bg-[#0d0d0d] border-white/5"
+              ? "bg-[#fcfcfc] border-neutral-200 shadow-neutral-900/2"
+              : "bg-[#0d0d0d] border-white/5 shadow-black/10"
           }`}>
             
             <AnimatePresence mode="wait">

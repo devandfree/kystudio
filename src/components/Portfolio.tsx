@@ -93,8 +93,8 @@ export default function Portfolio({ theme, language }: PortfolioProps) {
                 viewport={{ once: true }}
                 className={`group flex flex-col gap-5 cursor-pointer p-5 rounded-[2.5rem] border transition-all duration-300 ${
                   theme === "light"
-                    ? "bg-neutral-50 border-neutral-100 hover:shadow-xl hover:shadow-neutral-200/50"
-                    : "bg-white/5 border-white/5 hover:shadow-xl hover:shadow-black/50"
+                    ? "bg-neutral-50 border-neutral-100 hover:shadow-md hover:shadow-neutral-200/20"
+                    : "bg-white/5 border-white/5 hover:shadow-md hover:shadow-black/20"
                 }`}
                 onClick={() => setSelectedProject(project)}
               >
@@ -177,7 +177,7 @@ export default function Portfolio({ theme, language }: PortfolioProps) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
               transition={{ type: "spring", stiffness: 280, damping: 28 }}
-              className={`relative w-full max-w-4xl rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row z-10 border transition-colors duration-300 ${
+              className={`relative w-full max-w-4xl rounded-[2rem] overflow-hidden shadow-lg shadow-black/10 flex flex-col md:flex-row z-10 border transition-colors duration-300 ${
                 theme === "light"
                   ? "bg-white text-[#0a0a0a] border-neutral-100"
                   : "bg-[#0d0d0d] text-white border-white/10"

@@ -86,8 +86,8 @@ export default function Services({ theme, language }: ServicesProps) {
                   className={`w-full text-left p-6 rounded-2xl transition-all duration-300 border cursor-pointer flex gap-5 items-start ${
                     isActive
                       ? theme === "light"
-                        ? "bg-white border-red-600 shadow-md shadow-red-100"
-                        : "bg-white/5 border-red-600 shadow-md shadow-red-950/25"
+                        ? "bg-white border-red-600 shadow-sm shadow-red-100/30"
+                        : "bg-white/5 border-red-600 shadow-sm shadow-red-950/10"
                       : theme === "light"
                         ? "bg-transparent border-neutral-200/60 hover:border-neutral-300 hover:bg-neutral-50"
                         : "bg-transparent border-white/5 hover:border-white/10 hover:bg-white/[0.02]"
@@ -125,10 +125,10 @@ export default function Services({ theme, language }: ServicesProps) {
           </div>
 
           {/* Right Column: Dynamic Deep-Dive Panel */}
-          <div className={`lg:col-span-7 rounded-3xl p-8 md:p-12 relative min-h-[480px] flex flex-col justify-between overflow-hidden shadow-2xl border transition-all duration-300 ${
+          <div className={`lg:col-span-7 rounded-3xl p-8 md:p-12 relative min-h-[480px] flex flex-col justify-between overflow-hidden shadow-md border transition-all duration-300 ${
             theme === "light"
-              ? "bg-white border-neutral-200/60 shadow-neutral-100"
-              : "bg-[#0d0d0d] border-white/5 shadow-black"
+              ? "bg-white border-neutral-200/60 shadow-neutral-100/30"
+              : "bg-[#0d0d0d] border-white/5 shadow-black/20"
           }`}>
             {/* Ambient neon backdrop (Only on dark theme) */}
             {theme === "dark" && (

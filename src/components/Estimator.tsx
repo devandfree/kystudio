@@ -154,8 +154,8 @@ export default function Estimator({ theme, language }: EstimatorProps) {
           {/* LEFT: STEP SELECTOR */}
           <div className={`lg:col-span-8 rounded-3xl p-6 md:p-10 border transition-all duration-300 ${
             theme === "light"
-              ? "bg-white border-neutral-200/80 shadow-xl shadow-neutral-100"
-              : "bg-[#111] border-white/5 shadow-xl shadow-black"
+              ? "bg-white border-neutral-200/80 shadow-md shadow-neutral-100/40"
+              : "bg-[#111] border-white/5 shadow-md shadow-black/20"
           } min-h-[500px] flex flex-col justify-between`}>
             
             <AnimatePresence mode="wait">
@@ -229,8 +229,8 @@ export default function Estimator({ theme, language }: EstimatorProps) {
                             className={`w-full text-left p-5 rounded-2xl cursor-pointer transition-all duration-200 border flex justify-between items-center gap-4 ${
                               isSelected
                                 ? theme === "light"
-                                  ? "bg-red-50/40 border-red-600 shadow-md shadow-red-100"
-                                  : "bg-white/5 border-red-600 shadow-md shadow-red-950/20"
+                                  ? "bg-red-50/40 border-red-600 shadow-sm shadow-red-100/30"
+                                  : "bg-white/5 border-red-600 shadow-sm shadow-red-950/10"
                                 : theme === "light"
                                   ? "bg-neutral-50 border-neutral-200/60 hover:border-neutral-300 hover:bg-neutral-100/50"
                                   : "bg-[#161616]/40 border-white/5 hover:border-white/10 hover:bg-white/[0.02]"
@@ -520,8 +520,8 @@ export default function Estimator({ theme, language }: EstimatorProps) {
           {/* RIGHT: RUNNING PROPOSAL LEDGER */}
           <div className={`lg:col-span-4 rounded-3xl p-6 md:p-8 border transition-all duration-300 ${
             theme === "light"
-              ? "bg-white border-neutral-200/80 shadow-xl shadow-neutral-100"
-              : "bg-[#0d0d0d] border-white/5 shadow-2xl shadow-black"
+              ? "bg-white border-neutral-200/80 shadow-md shadow-neutral-100/40"
+              : "bg-[#0d0d0d] border-white/5 shadow-md shadow-black/20"
           } relative`}>
             {theme === "dark" && (
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-900/10 rounded-full blur-2xl" />

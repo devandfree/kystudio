@@ -61,8 +61,8 @@ export default function FAQ({ theme, language }: FAQProps) {
                 className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
                   isOpen
                     ? theme === "light"
-                      ? "bg-white border-red-600 shadow-xl shadow-red-950/5"
-                      : "bg-[#0d0d0d] border-red-600 shadow-xl shadow-red-950/20"
+                      ? "bg-white border-red-600 shadow-md shadow-red-950/2"
+                      : "bg-[#0d0d0d] border-red-600 shadow-md shadow-red-950/10"
                     : theme === "light"
                       ? "bg-neutral-50 border-neutral-200/60 hover:bg-white hover:border-neutral-300"
                       : "bg-white/5 border-white/5 hover:bg-white/[0.08] hover:border-white/10"

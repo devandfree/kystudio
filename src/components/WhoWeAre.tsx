@@ -133,10 +133,10 @@ export default function WhoWeAre({ onNavigate, theme, language }: WhoWeAreProps)
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className={`lg:col-span-7 rounded-[2rem] p-8 md:p-12 border flex flex-col justify-between transition-colors duration-300 shadow-xl ${
+            className={`lg:col-span-7 rounded-[2rem] p-8 md:p-12 border flex flex-col justify-between transition-colors duration-300 shadow-md ${
               theme === "light"
-                ? "bg-white border-neutral-150 text-neutral-900 shadow-neutral-200/40"
-                : "bg-neutral-900/40 border-white/5 text-white shadow-black/40"
+                ? "bg-white border-neutral-150 text-neutral-900 shadow-neutral-100"
+                : "bg-neutral-900/40 border-white/5 text-white shadow-black/10"
             }`}
           >
             <div>
@@ -189,8 +189,8 @@ export default function WhoWeAre({ onNavigate, theme, language }: WhoWeAreProps)
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className={`p-6 rounded-2xl border flex gap-5 items-start transition-all duration-300 hover:scale-[1.01] ${
                     theme === "light"
-                      ? "border-neutral-200 bg-white hover:border-red-500/30 hover:shadow-lg hover:shadow-neutral-200/50"
-                      : "border-white/5 bg-neutral-900/20 hover:border-red-500/30 hover:bg-neutral-900/40 hover:shadow-lg hover:shadow-black/50"
+                      ? "border-neutral-200 bg-white hover:border-red-500/30 hover:shadow-sm hover:shadow-neutral-100"
+                      : "border-white/5 bg-neutral-900/20 hover:border-red-500/30 hover:bg-neutral-900/40 hover:shadow-sm hover:shadow-black/20"
                   }`}
                 >
                   <div className="p-3 rounded-xl bg-red-500/10 text-red-500 shrink-0">
