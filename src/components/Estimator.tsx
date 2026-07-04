@@ -20,7 +20,8 @@ export default function Estimator({ theme, language }: EstimatorProps) {
   const [selectedTimeline, setSelectedTimeline] = useState<string>("standard");
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [contactInfo, setContactInfo] = useState({ name: "", email: "", notes: "" });
-  const [formErrors, setFormErrors] = useState({ name: "", email: "" });
+  const [formErrors, setFormErrors] = useState({ name: "", email: "", privacy: "" });
+  const [acceptPrivacy, setAcceptPrivacy] = useState<boolean>(false);
 
   // Handle language change reset to avoid mismatch
   useEffect(() => {
@@ -87,7 +88,7 @@ export default function Estimator({ theme, language }: EstimatorProps) {
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     let hasError = false;
-    const errors = { name: "", email: "" };
+    const errors = { name: "", email: "", privacy: "" };
 
     if (!contactInfo.name.trim()) {
       errors.name = language === "fr" ? "Le nom est requis" : "Name is required";
@@ -98,6 +99,10 @@ export default function Estimator({ theme, language }: EstimatorProps) {
       hasError = true;
     } else if (!/\S+@\S+\.\S+/.test(contactInfo.email)) {
       errors.email = language === "fr" ? "Veuillez spécifier un email valide" : "Please specify a valid email";
+      hasError = true;
+    }
+    if (!acceptPrivacy) {
+      errors.privacy = t.errorPrivacy;
       hasError = true;
     }
 
@@ -398,6 +403,56 @@ export default function Estimator({ theme, language }: EstimatorProps) {
                           }`}
                         />
                       </div>
+                      
+                      {/* Privacy Policy Checkbox */}
+                      <div className="flex flex-col gap-1.5 my-1 text-left">
+                        <label className="flex items-start gap-3 cursor-pointer group select-none">
+                          <div className="relative flex items-center mt-0.5 shrink-0">
+                            <input
+                              type="checkbox"
+                              checked={acceptPrivacy}
+                              onChange={(e) => {
+                                setAcceptPrivacy(e.target.checked);
+                                if (formErrors.privacy) {
+                                  setFormErrors((prev) => ({ ...prev, privacy: "" }));
+                                }
+                              }}
+                              className="sr-only"
+                            />
+                            <div className={`w-5 h-5 rounded-lg border flex items-center justify-center transition-all ${
+                              acceptPrivacy
+                                ? "bg-red-600 border-red-600 text-white"
+                                : theme === "light"
+                                  ? "border-neutral-300 bg-white hover:border-neutral-400"
+                                  : "border-white/10 bg-[#141414] hover:border-white/20"
+                            } ${
+                              formErrors.privacy ? "border-red-500" : ""
+                            }`}>
+                              {acceptPrivacy && (
+                                <svg
+                                  className="w-3.5 h-3.5 text-white"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                  strokeWidth="3.5"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                              )}
+                            </div>
+                          </div>
+                          <span className={`text-[11px] sm:text-xs leading-normal transition-colors duration-200 ${
+                            theme === "light"
+                              ? "text-neutral-500 group-hover:text-neutral-800"
+                              : "text-neutral-400 group-hover:text-neutral-200"
+                          }`}>
+                            {t.labelPrivacy}
+                          </span>
+                        </label>
+                        {formErrors.privacy && (
+                          <span className="text-[10px] text-red-500 font-medium ml-8">{formErrors.privacy}</span>
+                        )}
+                      </div>
 
                       {/* Action buttons */}
                       <div className={`flex justify-between items-center border-t pt-6 mt-4 transition-colors ${
@@ -499,6 +554,7 @@ export default function Estimator({ theme, language }: EstimatorProps) {
                   <button
                     onClick={() => {
                       setIsSubmitted(false);
+                      setAcceptPrivacy(false);
                       setCurrentStep(0);
                       setSelectedFeatures([]);
                       setContactInfo({ name: "", email: "", notes: "" });

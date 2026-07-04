@@ -12,7 +12,8 @@ export default function Contact({ theme, language }: ContactProps) {
   const t = translations[language].contact;
   
   const [formData, setFormData] = useState({ name: "", email: "", budget: "100 000 - 300 000 FCFA", details: "" });
-  const [formErrors, setFormErrors] = useState({ name: "", email: "" });
+  const [formErrors, setFormErrors] = useState({ name: "", email: "", privacy: "" });
+  const [acceptPrivacy, setAcceptPrivacy] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -25,7 +26,7 @@ export default function Contact({ theme, language }: ContactProps) {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     let hasError = false;
-    const errors = { name: "", email: "" };
+    const errors = { name: "", email: "", privacy: "" };
 
     const nameVal = formData.name.trim();
     const emailVal = formData.email.trim();
@@ -40,6 +41,11 @@ export default function Contact({ theme, language }: ContactProps) {
       hasError = true;
     } else if (!/\S+@\S+\.\S+/.test(emailVal)) {
       errors.email = language === "fr" ? "Veuillez spécifier un email valide" : "Please specify a valid email";
+      hasError = true;
+    }
+
+    if (!acceptPrivacy) {
+      errors.privacy = t.errorPrivacy;
       hasError = true;
     }
 
@@ -310,6 +316,56 @@ export default function Contact({ theme, language }: ContactProps) {
                     />
                   </div>
 
+                  {/* Privacy Policy Checkbox */}
+                  <div className="flex flex-col gap-1.5 my-1">
+                    <label className="flex items-start gap-3 cursor-pointer group select-none">
+                      <div className="relative flex items-center mt-0.5">
+                        <input
+                          type="checkbox"
+                          checked={acceptPrivacy}
+                          onChange={(e) => {
+                            setAcceptPrivacy(e.target.checked);
+                            if (formErrors.privacy) {
+                              setFormErrors((prev) => ({ ...prev, privacy: "" }));
+                            }
+                          }}
+                          className="sr-only"
+                        />
+                        <div className={`w-5 h-5 rounded-lg border flex items-center justify-center transition-all ${
+                          acceptPrivacy
+                            ? "bg-red-600 border-red-600 text-white"
+                            : theme === "light"
+                              ? "border-neutral-300 bg-white hover:border-neutral-400"
+                              : "border-white/10 bg-[#141414] hover:border-white/20"
+                        } ${
+                          formErrors.privacy ? "border-red-500" : ""
+                        }`}>
+                          {acceptPrivacy && (
+                            <svg
+                              className="w-3.5 h-3.5 text-white"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth="3.5"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+                      <span className={`text-[11px] sm:text-xs leading-normal transition-colors duration-200 ${
+                        theme === "light"
+                          ? "text-neutral-500 group-hover:text-neutral-800"
+                          : "text-neutral-400 group-hover:text-neutral-200"
+                      }`}>
+                        {t.labelPrivacy}
+                      </span>
+                    </label>
+                    {formErrors.privacy && (
+                      <span className="text-[10px] text-red-500 font-medium ml-8">{formErrors.privacy}</span>
+                    )}
+                  </div>
+
                   {/* Submit Button */}
                   <button
                     type="submit"
@@ -388,6 +444,7 @@ export default function Contact({ theme, language }: ContactProps) {
                   <button
                     onClick={() => {
                       setIsSubmitted(false);
+                      setAcceptPrivacy(false);
                       setFormData({ name: "", email: "", budget: "100 000 - 300 000 FCFA", details: "" });
                     }}
                     className={`flex items-center gap-2 border text-xs font-bold px-6 py-3 rounded-xl cursor-pointer transition-all uppercase tracking-wider ${
