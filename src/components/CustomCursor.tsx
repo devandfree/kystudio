@@ -20,6 +20,11 @@ export default function CustomCursor({ theme }: CustomCursorProps) {
   const smoothX = useSpring(cursorX, springConfig);
   const smoothY = useSpring(cursorY, springConfig);
 
+  // Spring configuration for the secondary trailing fluid blur glow
+  const trailSpringConfig = { damping: 35, stiffness: 120, mass: 1.4 };
+  const trailX = useSpring(cursorX, trailSpringConfig);
+  const trailY = useSpring(cursorY, trailSpringConfig);
+
   useEffect(() => {
     // Only apply on devices with a fine pointer (mouse/stylus)
     const isTouch = window.matchMedia("(pointer: coarse)").matches;
@@ -86,6 +91,48 @@ export default function CustomCursor({ theme }: CustomCursorProps) {
 
   return (
     <>
+      {/* Premium Trailing Comet (Soft Red Glow + Tiny Follower Dot with fluid delay) */}
+      <motion.div
+        className="fixed pointer-events-none z-[9998] left-0 top-0"
+        style={{
+          x: trailX,
+          y: trailY,
+        }}
+      >
+        {/* Soft fluid red aura */}
+        <motion.div
+          className="absolute rounded-full pointer-events-none filter blur-[10px] bg-red-600/15"
+          animate={{
+            width: hoverState === "interactive" ? 80 : hoverState === "text" ? 0 : 44,
+            height: hoverState === "interactive" ? 80 : hoverState === "text" ? 0 : 44,
+            left: hoverState === "interactive" ? -40 : hoverState === "text" ? 0 : -22,
+            top: hoverState === "interactive" ? -40 : hoverState === "text" ? 0 : -22,
+            opacity: isVisible && hoverState !== "text" ? 0.85 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 30,
+          }}
+        />
+        {/* Tiny trailing core dot */}
+        <motion.div
+          className="absolute rounded-full pointer-events-none bg-red-600/40"
+          animate={{
+            width: hoverState === "interactive" ? 0 : hoverState === "text" ? 0 : 4,
+            height: hoverState === "interactive" ? 0 : hoverState === "text" ? 0 : 4,
+            left: hoverState === "interactive" ? 0 : hoverState === "text" ? 0 : -2,
+            top: hoverState === "interactive" ? 0 : hoverState === "text" ? 0 : -2,
+            opacity: isVisible && hoverState !== "text" ? 1 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 220,
+            damping: 28,
+          }}
+        />
+      </motion.div>
+
       {/* Outer Ring Wrapper (with dynamic spring physics for the elite catch-up lag effect) */}
       <motion.div
         className="fixed pointer-events-none z-[9999] left-0 top-0"
