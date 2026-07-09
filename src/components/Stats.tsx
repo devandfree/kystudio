@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { translations, Language } from "../lib/translations";
+import ScrollReveal from "./ScrollReveal";
 
 interface StatsProps {
   theme: "dark" | "light";
@@ -38,7 +39,8 @@ export default function Stats({ theme, language }: StatsProps) {
         ? "bg-white text-black border-neutral-150"
         : "bg-[#0d0d0d] text-white border-white/5"
     }`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Category Label */}
         <div className="flex items-center gap-1.5 mb-12">
           <span className="w-1.5 h-1.5 bg-red-600 rounded-sm" />
@@ -84,6 +86,7 @@ export default function Stats({ theme, language }: StatsProps) {
           ))}
         </div>
       </div>
+      </ScrollReveal>
     </section>
   );
 }

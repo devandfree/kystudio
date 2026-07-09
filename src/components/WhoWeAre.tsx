@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Zap, Sparkles, Cpu, ShieldCheck } from "lucide-react";
 import { translations, Language } from "../lib/translations";
+import ScrollReveal from "./ScrollReveal";
 
 interface WhoWeAreProps {
   onNavigate: (sectionId: string) => void;
@@ -86,7 +87,8 @@ export default function WhoWeAre({ onNavigate, theme, language }: WhoWeAreProps)
           : "bg-[#0a0a0a] text-white border-white/5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header Layout */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
@@ -213,6 +215,7 @@ export default function WhoWeAre({ onNavigate, theme, language }: WhoWeAreProps)
         </div>
 
       </div>
+      </ScrollReveal>
     </section>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Monitor, Code, ShoppingCart, Search, Check, Sparkles } from "lucide-react";
 import { translations, getServices, Language } from "../lib/translations";
+import ScrollReveal from "./ScrollReveal";
 
 interface ServicesProps {
   theme: "dark" | "light";
@@ -39,7 +40,8 @@ export default function Services({ theme, language }: ServicesProps) {
           : "bg-[#0a0a0a] text-white border-white/5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16 md:mb-24">
@@ -209,6 +211,7 @@ export default function Services({ theme, language }: ServicesProps) {
         </div>
 
       </div>
+      </ScrollReveal>
     </section>
   );
 }

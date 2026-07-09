@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronRight, ChevronLeft, Check, Sparkles, Send, Coins, Calendar, CheckCircle } from "lucide-react";
 import { translations, getEstimatorSteps, Language } from "../lib/translations";
 import { EstimatorStep } from "../types";
+import ScrollReveal from "./ScrollReveal";
 
 interface EstimatorProps {
   theme: "dark" | "light";
@@ -130,7 +131,8 @@ export default function Estimator({ theme, language }: EstimatorProps) {
         <div className="absolute top-1/3 left-1/2 w-96 h-96 bg-red-950/10 rounded-full blur-3xl -translate-x-1/2" />
       )}
       
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col gap-4 max-w-2xl mb-16">
@@ -720,6 +722,7 @@ export default function Estimator({ theme, language }: EstimatorProps) {
         </div>
 
       </div>
+      </ScrollReveal>
     </section>
   );
 }

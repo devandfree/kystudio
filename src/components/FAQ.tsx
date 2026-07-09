@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown, Sparkles } from "lucide-react";
 import { translations, getFAQs, Language } from "../lib/translations";
+import ScrollReveal from "./ScrollReveal";
 
 interface FAQProps {
   theme: "dark" | "light";
@@ -26,7 +27,8 @@ export default function FAQ({ theme, language }: FAQProps) {
           : "bg-[#0a0a0a] text-white border-white/5"
       }`}
     >
-      <div className="max-w-4xl mx-auto px-6">
+      <ScrollReveal>
+        <div className="max-w-4xl mx-auto px-6">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16 md:mb-20">
@@ -123,6 +125,7 @@ export default function FAQ({ theme, language }: FAQProps) {
         </div>
 
       </div>
+      </ScrollReveal>
     </section>
   );
 }

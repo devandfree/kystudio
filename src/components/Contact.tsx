@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Send, CheckCircle, Mail, MapPin, Calendar, Sparkles, ArrowRight } from "lucide-react";
 import { translations, Language } from "../lib/translations";
+import ScrollReveal from "./ScrollReveal";
 
 interface ContactProps {
   theme: "dark" | "light";
@@ -83,7 +84,8 @@ export default function Contact({ theme, language }: ContactProps) {
         theme === "light" ? "bg-red-100/20" : "bg-red-900/10"
       }`} />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           
@@ -465,6 +467,7 @@ export default function Contact({ theme, language }: ContactProps) {
         </div>
 
       </div>
+      </ScrollReveal>
     </section>
   );
 }

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, X, Sparkles, Filter } from "lucide-react";
 import { translations, getProjects, Language } from "../lib/translations";
 import { Project } from "../types";
+import ScrollReveal from "./ScrollReveal";
 
 interface PortfolioProps {
   theme: "dark" | "light";
@@ -37,7 +38,8 @@ export default function Portfolio({ theme, language }: PortfolioProps) {
           : "bg-[#0a0a0a] text-white border-white/5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header Layout */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
@@ -163,6 +165,7 @@ export default function Portfolio({ theme, language }: PortfolioProps) {
         </div>
 
       </div>
+      </ScrollReveal>
 
       {/* CASE STUDY MODAL OVERLAY */}
       <AnimatePresence>
