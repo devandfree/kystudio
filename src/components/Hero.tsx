@@ -1,5 +1,4 @@
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { useEffect } from "react";
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { translations, Language } from "../lib/translations";
 
@@ -11,47 +10,6 @@ interface HeroProps {
 
 export default function Hero({ onNavigate, theme, language }: HeroProps) {
   const t = translations[language].hero;
-
-  // Track cursor position to drive subtle floating background shape parallax offsets
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Smooth out the coordinate movements with spring physics for a premium floating lag
-  const smoothMouseX = useSpring(mouseX, { stiffness: 50, damping: 22 });
-  const smoothMouseY = useSpring(mouseY, { stiffness: 50, damping: 22 });
-
-  // Transform coordinates to localized translation pixels for various layers (depth layers)
-  const shape1X = useTransform(smoothMouseX, (v) => v * 45);
-  const shape1Y = useTransform(smoothMouseY, (v) => v * 45);
-
-  const shape2X = useTransform(smoothMouseX, (v) => v * -65);
-  const shape2Y = useTransform(smoothMouseY, (v) => v * -65);
-
-  const shape3X = useTransform(smoothMouseX, (v) => v * 85);
-  const shape3Y = useTransform(smoothMouseY, (v) => v * -45);
-
-  const shape4X = useTransform(smoothMouseX, (v) => v * -25);
-  const shape4Y = useTransform(smoothMouseY, (v) => v * 55);
-
-  useEffect(() => {
-    // Only listen and animate if on a device with a fine pointer (to save battery on touch screens)
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouch) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const { innerWidth, innerHeight } = window;
-      // Map coordinates to normalized -0.5 to 0.5 range centered on the screen
-      const x = (e.clientX / innerWidth) - 0.5;
-      const y = (e.clientY / innerHeight) - 0.5;
-      mouseX.set(x);
-      mouseY.set(y);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [mouseX, mouseY]);
 
   // Stagger variants for smooth entry
   const containerVariants = {
@@ -103,126 +61,6 @@ export default function Hero({ onNavigate, theme, language }: HeroProps) {
         <div className={`absolute bottom-1/3 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl animate-pulse transition-colors duration-300 ${
           theme === "light" ? "bg-red-300/5" : "bg-red-600/5"
         }`} />
-      </div>
-
-      {/* Subtle, Floating Abstract Geometric Shapes with interactive mouse movement */}
-      <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden select-none">
-        {/* Shape 1: Double Orbit Rings */}
-        <motion.div
-          style={{ x: shape1X, y: shape1Y }}
-          className="absolute top-[18%] left-[6%] w-48 h-48 rounded-full hidden md:block"
-        >
-          <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none">
-            <circle
-              cx="50"
-              cy="50"
-              r="45"
-              stroke="currentColor"
-              strokeWidth="0.4"
-              className={theme === "light" ? "text-red-600/15" : "text-red-500/15"}
-            />
-            <circle
-              cx="50"
-              cy="50"
-              r="34"
-              stroke="currentColor"
-              strokeWidth="0.25"
-              strokeDasharray="2 3"
-              className={theme === "light" ? "text-neutral-950/5" : "text-white/5"}
-            />
-          </svg>
-        </motion.div>
-
-        {/* Shape 2: Rotating Hollow Square with Crosshair Lines */}
-        <motion.div
-          style={{ x: shape2X, y: shape2Y }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 55, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[35%] right-[8%] w-56 h-56 hidden md:block"
-        >
-          <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none">
-            <rect
-              x="18"
-              y="18"
-              width="64"
-              height="64"
-              stroke="currentColor"
-              strokeWidth="0.4"
-              className={theme === "light" ? "text-neutral-950/5" : "text-white/5"}
-            />
-            <line
-              x1="18"
-              y1="18"
-              x2="82"
-              y2="82"
-              stroke="currentColor"
-              strokeWidth="0.25"
-              strokeDasharray="3 3"
-              className={theme === "light" ? "text-red-600/10" : "text-red-500/10"}
-            />
-          </svg>
-        </motion.div>
-
-        {/* Shape 3: Geometric Dot Matrix */}
-        <motion.div
-          style={{ x: shape3X, y: shape3Y }}
-          className="absolute bottom-[28%] left-[4%] w-32 h-32 opacity-50 md:opacity-80"
-        >
-          <svg width="100%" height="100%" viewBox="0 0 80 80" fill="none">
-            {Array.from({ length: 4 }).map((_, r) =>
-              Array.from({ length: 4 }).map((_, c) => (
-                <circle
-                  key={`${r}-${c}`}
-                  cx={12 + c * 18}
-                  cy={12 + r * 18}
-                  r="1.2"
-                  fill="currentColor"
-                  className={theme === "light" ? "text-neutral-950/15" : "text-white/10"}
-                />
-              ))
-            )}
-          </svg>
-        </motion.div>
-
-        {/* Shape 4: Concentric Orbital Ellipses */}
-        <motion.div
-          style={{ x: shape4X, y: shape4Y }}
-          className="absolute top-[58%] left-[42%] w-80 h-40 hidden lg:block"
-        >
-          <svg width="100%" height="100%" viewBox="0 0 200 100" fill="none">
-            <ellipse
-              cx="100"
-              cy="50"
-              rx="85"
-              ry="32"
-              stroke="currentColor"
-              strokeWidth="0.4"
-              strokeDasharray="5 4"
-              className={theme === "light" ? "text-neutral-950/5" : "text-white/5"}
-            />
-            <ellipse
-              cx="100"
-              cy="50"
-              rx="65"
-              ry="22"
-              stroke="currentColor"
-              strokeWidth="0.25"
-              className={theme === "light" ? "text-red-600/10" : "text-red-500/10"}
-            />
-          </svg>
-        </motion.div>
-
-        {/* Shape 5: Center Crosshair target */}
-        <motion.div
-          style={{ x: shape2X, y: shape1Y }}
-          className="absolute top-[20%] right-[38%] w-16 h-16 hidden sm:block"
-        >
-          <svg width="100%" height="100%" viewBox="0 0 40 40" fill="none">
-            <line x1="20" y1="8" x2="20" y2="32" stroke="currentColor" strokeWidth="0.4" className={theme === "light" ? "text-neutral-950/10" : "text-white/10"} />
-            <line x1="8" y1="20" x2="32" y2="20" stroke="currentColor" strokeWidth="0.4" className={theme === "light" ? "text-neutral-950/10" : "text-white/10"} />
-            <circle cx="20" cy="20" r="2.5" stroke="currentColor" strokeWidth="0.4" className={theme === "light" ? "text-red-600/20" : "text-red-500/20"} />
-          </svg>
-        </motion.div>
       </div>
 
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 mt-8 flex flex-col justify-between min-h-[75vh]">
