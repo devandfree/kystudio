@@ -97,10 +97,10 @@ export default function CustomCursor({ theme }: CustomCursorProps) {
         <motion.div
           className="absolute rounded-full border pointer-events-none"
           animate={{
-            width: hoverState === "interactive" ? 56 : hoverState === "text" ? 0 : 28,
-            height: hoverState === "interactive" ? 56 : hoverState === "text" ? 0 : 28,
-            left: hoverState === "interactive" ? -28 : hoverState === "text" ? 0 : -14,
-            top: hoverState === "interactive" ? -28 : hoverState === "text" ? 0 : -14,
+            width: hoverState === "interactive" ? 68 : hoverState === "text" ? 0 : 36,
+            height: hoverState === "interactive" ? 68 : hoverState === "text" ? 0 : 36,
+            left: hoverState === "interactive" ? -34 : hoverState === "text" ? 0 : -18,
+            top: hoverState === "interactive" ? -34 : hoverState === "text" ? 0 : -18,
             backgroundColor: hoverState === "interactive" ? "rgba(220, 38, 38, 0.08)" : "rgba(220, 38, 38, 0)",
             borderColor: hoverState === "interactive" 
               ? "rgba(220, 38, 38, 0.8)" 
@@ -129,11 +129,11 @@ export default function CustomCursor({ theme }: CustomCursorProps) {
         <motion.div
           className="absolute pointer-events-none"
           animate={{
-            width: hoverState === "text" ? 1.5 : hoverState === "interactive" ? 0 : 6,
-            height: hoverState === "text" ? 16 : hoverState === "interactive" ? 0 : 6,
+            width: hoverState === "text" ? 2 : hoverState === "interactive" ? 0 : 8,
+            height: hoverState === "text" ? 18 : hoverState === "interactive" ? 0 : 8,
             borderRadius: hoverState === "text" ? "1px" : "9999px",
-            left: hoverState === "text" ? -0.75 : hoverState === "interactive" ? 0 : -3,
-            top: hoverState === "text" ? -8 : hoverState === "interactive" ? 0 : -3,
+            left: hoverState === "text" ? -1 : hoverState === "interactive" ? 0 : -4,
+            top: hoverState === "text" ? -9 : hoverState === "interactive" ? 0 : -4,
             backgroundColor: hoverState === "text"
               ? (theme === "light" ? "#171717" : "#f5f5f5")
               : "#dc2626",
