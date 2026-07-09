@@ -10,6 +10,7 @@ import Estimator from "./components/Estimator";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import CustomCursor from "./components/CustomCursor";
 import { Language } from "./lib/translations";
 
 export default function App() {
@@ -89,6 +90,9 @@ export default function App() {
     <div className={`min-h-screen transition-colors duration-300 selection:bg-red-600 selection:text-white ${
       theme === "light" ? "bg-[#fcfcfc] text-neutral-900" : "bg-[#0a0a0a] text-white"
     }`}>
+      {/* Premium custom mouse cursor */}
+      <CustomCursor theme={theme} />
+
       {/* Sticky Premium Header with Theme & Language Toggle */}
       <Header 
         onNavigate={scrollToSection} 
